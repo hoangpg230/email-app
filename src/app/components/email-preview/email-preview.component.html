@@ -1,0 +1,25 @@
+<div class="content-body px-0">
+  <table class="table-sm table-borderless w-100">
+    <thead>
+      <tr>
+        <th width="2%"></th>
+        <th width="20%">Sender</th>
+        <th width="52%">Subject</th>
+        <th width="16%">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let message of Messages" [ngClass]="{'active': message._id == idParm}"
+        (click)="handleReadMail(message._id)">
+        <td width="2%"></td>
+        <td>
+          {{ message.from |customeString }}
+        </td>
+        <td> {{ message.subject }}</td>
+        <td>{{ message.date | date: 'yyyy-MM-dd' }}</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>

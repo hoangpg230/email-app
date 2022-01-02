@@ -1,0 +1,32 @@
+<div class="message-content">
+    <div class="message-header d-flex p-4 justify-content-between">
+      <div class="message-header-left">
+        <h5>{{ Message.subject }}</h5>
+        <div class="message-header-left-info">
+          {{ Message.from }}
+          <fa-icon [icon]="icons.faLongArrowAltRight"></fa-icon>
+          {{ Message.to }}
+        </div>
+      </div>
+      <div class="message-header-right">
+        <div>{{ Message.date }}</div>
+        <div class="message-header-right-info">
+            <button class="btn btn-primary  ">
+              <fa-icon [icon]="icons.faReply"></fa-icon>
+              Reply
+            </button>
+            <button class="btn btn-primary ml-1">
+              <fa-icon [icon]="icons.faForward"></fa-icon>
+              Forward
+            </button>
+            <button class="btn btn-primary ml-1">
+              <fa-icon [icon]="icons.faTimes"></fa-icon>
+              Delete
+            </button>
+        </div>
+      </div>
+    </div>
+    <pre style="white-space: break-spaces; " class="message-body px-4 py-0 mt-2">
+{{ Message.body | customeMessage}}
+    </pre>
+  </div>

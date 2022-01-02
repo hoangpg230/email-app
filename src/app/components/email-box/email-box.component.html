@@ -1,0 +1,20 @@
+<div class="slide-bar px-0">
+    <ul class="slide-bar__list">
+      <li *ngFor="let messageBox of messageBoxs" class="slide-bar__item">
+        <a [routerLink]="['/mymessages/' + messageBox]" [ngClass]="{ 'active': typeParm == messageBox}" class="slide-bar__link">
+          <div class="folder">
+            <fa-icon [icon]="icons.faFolder" size="xs"
+              [styles]="{'stroke': 'black', 'color': 'gainsboro ', 'filter': 'drop-shadow(-.5px 0.8px 0px #333) drop-shadow(0.8px 0px 0px #333) drop-shadow(0.7px 0px 0px #333)'}">
+            </fa-icon>
+          </div>
+          <div class="folder-open">
+            <fa-icon [icon]="icons.faFolderOpen" size="xs"
+              [styles]="{'stroke': 'white', 'color': 'cornflowerblue', 'filter': 'drop-shadow(1.2px 1px 0px white) drop-shadow(1px -0.7px 0px white) drop-shadow(-1px 0px 0px white)'}">
+            </fa-icon>
+          </div>
+          <p class="ml-1">{{ messageBox }}</p>
+        </a>
+      </li>
+      
+    </ul>
+  </div>

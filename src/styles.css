@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    font-family:'Times New Roman', Times, serif
+}
+
+.b-rd-3 {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.cl-b {
+    color: #337ab7;
+}
+
+.btn-primary {
+    background-color: #337ab7 !important;
+    border-color: #337ab7 !important;
+}
+
+.hv-b:hover {
+    background-color: #eee
+}
+
+.slide-bar {
+    overflow-y: scroll;
+    background-color: gainsboro;
+    min-width: 160px;
+}
+
+.content-body {
+    flex: 1;
+}
+
+.slide-bar__list {
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.slide-bar__link {
+    display: flex;
+    width: 100%;
+    font-size: .9rem;
+    color: #333 !important;
+    text-decoration: none !important;
+    height: 24px;
+    overflow: hidden;
+    padding-left: 40px;
+
+}
+
+.slide-bar__link .folder-open {
+    display: none
+}
+
+.slide-bar__link.active {
+    background-color: cornflowerblue;
+    color: #fff !important;
+}
+
+.slide-bar__link.active .folder {
+    display: none
+}
+
+.slide-bar__link.active .folder-open {
+    display: block;
+}
+
+table {
+    font-size: .9rem;
+}
+
+th {
+    font-size: .8rem;
+}
+
+th, td {
+    padding: 3px 0;
+    white-space: nowrap;
+}
+
+tr.active {
+    background-color: cornflowerblue;
+    color: #fff
+}
+
+.message-header {
+    background-color: darkgray
+}

@@ -1,0 +1,40 @@
+<div class="contaier-fluid overflow-hidden">
+  <header class="header d-flex justify-content-between">
+    <nav class="pl-1 pt-1">
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a [ngClass]="{'active': url.split('/')[1].includes('mymessages')}" class="nav-link b-rd-3 cl-b hv-b" id="nav-home-tab" data-toggle="tab" [routerLink]="[messageRoute]" role="tab"
+          aria-controls="nav-home" aria-selected="true"> Messages </a>
+        <a [routerLinkActive]="['active']" class="nav-link b-rd-3 cl-b hv-b" id="nav-profile-tab" data-toggle="tab" [routerLink]="['/contacts']" role="tab"
+          aria-controls="nav-profile" aria-selected="false"> Contacts </a>
+        <a routerLinkActive="active" class="nav-link b-rd-3 cl-b hv-b" id="nav-contact-tab" data-toggle="tab" [routerLink]="['/prefs']" role="tab"
+          aria-controls="nav-contact" aria-selected="false"> Preferences </a>
+      </div>
+    </nav>
+    <div class="header-right d-flex align-items-center">
+      <div class="dropdown-user mr-3 dropdown" >
+        <div class="user-infor d-flex align-items-center" id="dropdownMenuButton" data-toggle="dropdown">
+          <div class="user-name mr-2">{{ user }}</div>
+          <fa-icon [icon]="icons.faChevronDown"></fa-icon>
+        </div>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div *ngFor="let _user of users" class="dropdown-item" href="#">
+            <ng-container *ngIf="_user !== user" >
+                <div (click)="handleChangeUser(_user)" class="btn">{{ _user }}</div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary mr-1">
+        <div class="">
+          <fa-icon [icon]="icons.faHome" size="xs"></fa-icon>
+        </div>
+      </button>
+      <button class="btn btn-primary mr-1">
+        <fa-icon [icon]="icons.faEnvelope"></fa-icon>
+        New Messages
+      </button>
+    </div>
+  </header>
+
+  <router-outlet></router-outlet>
+</div>
